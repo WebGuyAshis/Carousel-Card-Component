@@ -1,0 +1,101 @@
+.carouselCard {
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow: hidden;
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+
+    .media {
+        background-color: rgb(37, 37, 37);
+        aspect-ratio: 16 / 9;
+        display: flex;
+        position: relative;
+
+        .carouselContainer {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+
+            .mediaFile {
+                height: 100%;
+                width: 100%;
+                min-width: 100%;
+
+                img,
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .carouselShowBtns {
+        position: absolute;
+        height: 10px;
+        z-index: 1;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        z-index: 2;
+
+        .carouselBtn {
+            background-color: rgb(255, 255, 255);
+            height: 8px;
+            width: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .activeIndex {
+            width: 30px;
+            transition: 0.4s all ease;
+        }
+    }
+
+    .content {
+        padding: 10px;
+        background-color: white;
+        text-align: justify;
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            margin: 4px 0;
+        }
+    }
+}
